@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class BallController : MonoBehaviour
 {
+    private bool isBallLaunched = false;
     [SerializeField] private float force = 1f;
     [SerializeField] private InputManager inputManager;
 
@@ -15,6 +16,8 @@ public class BallController : MonoBehaviour
 
     private void LaunchBall()
     {
+        if (isBallLaunched) return;
         ballRB.AddForce(transform.forward * force, ForceMode.Impulse);
+        isBallLaunched = true;
     }
 }
