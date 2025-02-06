@@ -16,6 +16,7 @@ public class BallController : MonoBehaviour
         inputManager.OnSpacePressed.AddListener(LaunchBall);
         transform.parent = ballAnchor;
         transform.localPosition = Vector3.zero;
+        GetComponent<Collider>().enabled = false;
         ballRB.isKinematic = true;
     }
 
@@ -26,6 +27,7 @@ public class BallController : MonoBehaviour
         transform.parent = null;
         ballRB.isKinematic = false;
         ballRB.AddForce(launchIndicator.forward * force, ForceMode.Impulse);
+        GetComponent<Collider>().enabled = true;
         launchIndicator.gameObject.SetActive(false);
     }
 }
