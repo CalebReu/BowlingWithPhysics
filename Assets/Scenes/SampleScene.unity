@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1686853983}
-  speed: 25
+  speed: 10
 --- !u!54 &1819853830
 Rigidbody:
   m_ObjectHideFlags: 0
